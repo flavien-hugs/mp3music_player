@@ -165,7 +165,7 @@ play_button = Button(
     height=60,
     width=70,
     image=play_img,
-    justify="center",
+    justify=CENTER,
     command=lambda: playSong()
 )
 play_button.grid(row=0, column=0, padx=10)
@@ -181,7 +181,7 @@ prev_button = Button(
     height=60,
     width=70,
     image=prev_img,
-    justify="center",
+    justify=CENTER,
     command=lambda: prevSong()
 )
 prev_button.grid(row=0, column=1, padx=10)
@@ -197,7 +197,7 @@ pause_button = Button(
     height=60,
     width=70,
     image=pause_img,
-    justify="center",
+    justify=CENTER,
     command=lambda: pauseSong(paused)
 )
 pause_button.grid(row=0, column=2, padx=10)
@@ -213,7 +213,7 @@ next_button = Button(
     height=60,
     width=70,
     image=next_img,
-    justify="center",
+    justify=CENTER,
     command=lambda: nextSong()
 )
 next_button.grid(row=0, column=3, padx=10)
@@ -229,7 +229,7 @@ stop_button = Button(
     height=60,
     width=70,
     image=stop_img,
-    justify="center",
+    justify=CENTER,
     command=lambda: stopSong()
 )
 stop_button.grid(row=0, column=4, padx=10)
@@ -245,7 +245,7 @@ exit_button = Button(
     width=70,
     borderwidth=0,
     image=exit_img,
-    justify="center",
+    justify=CENTER,
     command=lambda: main.destroy()
 )
 exit_button.grid(row=0, column=6, padx=10)
