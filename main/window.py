@@ -65,13 +65,8 @@ add_song_menu.add_command(
     command=lambda: addSong()
 )
 
-beatmaker_song_menu = Menu(menubar, tearoff=0)
-menubar.add_cascade(
+menubar.add_command(
     label="BeatMaker",
-    menu=beatmaker_song_menu
-)
-beatmaker_song_menu.add_command(
-    label="Open BeatMaker",
     command=lambda: openBeatMaker(main)
 )
 
