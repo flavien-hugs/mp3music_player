@@ -24,19 +24,12 @@ pygame.mixer.init()
 main = Tk()
 main.title('🎵 Sundance Music Player 🎵')
 
-icon = BASE_DIR / 'images/icon.png'
-main.tk.call(
-    'wm', 'iconphoto',
-    main._w,
-    PhotoImage(file=icon)
-)
-
 # -----------
 # Init Window
 # -----------
 
 # obtenir la dimension de l'écran
-wn_width, wn_height = 960, 540
+wn_width, wn_height = 980, 600
 screen_width = main.winfo_screenwidth()
 screen_height = main.winfo_screenheight()
 
@@ -48,6 +41,20 @@ center_y = int(screen_height/2 - wn_height/2)
 main.geometry(f'{wn_width}x{wn_height}+{center_x}+{center_y}')
 main.minsize(wn_width, wn_height)
 main.maxsize(screen_height, screen_width)
+
+# Add Logo
+icon = BASE_DIR / 'images/icon.png'
+main.tk.call(
+    'wm', 'iconphoto',
+    main._w,
+    PhotoImage(file=icon)
+)
+
+# Add background image
+img = BASE_DIR / 'images/background.png'
+background_image = PhotoImage(file=img)
+label = Label(main, image=background_image)
+label.place(x=0, y=0)
 
 # -----------------------------
 # Init Menu and Command
@@ -133,7 +140,8 @@ playlist_box = Listbox(
     selectbackground="green",
     selectforeground="black",
     font=("popins", 14),
-).pack(padx=15, pady=20)
+)
+playlist_box.pack(padx=15, pady=20)
 
 # --------------------
 # Init Entry Text Song
@@ -141,8 +149,9 @@ playlist_box = Listbox(
 
 text_box = Text(
     main,
-    height=8, width=80,
-).pack(padx=15, pady=20)
+    height=8, width=120,
+)
+text_box.pack(padx=15, pady=20)
 
 # -----------------------------
 # Init player control buttons
@@ -152,7 +161,7 @@ text_box = Text(
 Create player control frame
 """
 control_frame = Frame(main)
-control_frame.pack(pady="10", side="bottom")
+control_frame.pack(pady="20", side="bottom")
 
 """
 play button
@@ -161,7 +170,6 @@ play = BASE_DIR / 'images/play.png'
 play_img = PhotoImage(file=play)
 play_button = Button(
     control_frame,
-    bg="white",
     height=60,
     width=70,
     image=play_img,
@@ -177,7 +185,6 @@ prev = BASE_DIR / 'images/prev.png'
 prev_img = PhotoImage(file=prev)
 prev_button = Button(
     control_frame,
-    bg="white",
     height=60,
     width=70,
     image=prev_img,
@@ -193,7 +200,6 @@ pause = BASE_DIR / 'images/pause.png'
 pause_img = PhotoImage(file=pause)
 pause_button = Button(
     control_frame,
-    bg="white",
     height=60,
     width=70,
     image=pause_img,
@@ -209,7 +215,6 @@ next = BASE_DIR / 'images/next.png'
 next_img = PhotoImage(file=next)
 next_button = Button(
     control_frame,
-    bg="white",
     height=60,
     width=70,
     image=next_img,
@@ -225,7 +230,6 @@ stop = BASE_DIR / 'images/stop.png'
 stop_img = PhotoImage(file=stop)
 stop_button = Button(
     control_frame,
-    bg="white",
     height=60,
     width=70,
     image=stop_img,
