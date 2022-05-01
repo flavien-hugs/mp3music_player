@@ -24,6 +24,13 @@ pygame.mixer.init()
 main = Tk()
 main.title('🎵 Sundance Music Player 🎵')
 
+icon = BASE_DIR / 'images/icon.png'
+main.tk.call(
+    'wm', 'iconphoto',
+    main._w,
+    PhotoImage(file=icon)
+)
+
 # -----------
 # Init Window
 # -----------
